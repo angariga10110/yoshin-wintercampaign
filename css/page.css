@@ -1,0 +1,860 @@
+/* ==================================================
+  Page CSS – Final Unified Version
+================================================== */
+
+/* ==================================================
+  共通 Section 间距（唯一规则）
+================================================== */
+section {
+  padding: 60px 0;
+}
+
+@media (min-width: 768px) {
+  section {
+    padding: 80px 0;
+  }
+}
+
+/* ==================================================
+  CTA（主强调区块）
+================================================== */
+/* ==================================================
+  CTA – Global Unified Style（最终版）
+================================================== */
+.cta {
+  position: relative;
+  background: linear-gradient(180deg,
+      #f5f8ff 0%,
+      #eef3ff 100%);
+  text-align: center;
+  padding: 120px 0;
+  overflow: hidden;
+}
+
+/* PC 间距 */
+@media (min-width: 768px) {
+  .cta {
+    padding: 150px 0;
+  }
+}
+
+/* ==================================================
+  CTA 装饰元素（专属识别）
+================================================== */
+
+/* 右上角柔和圆形 */
+.cta::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 220px;
+  height: 220px;
+  background: rgba(31, 77, 156, 0.08);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+/* 底部舞台弧形（过渡到下一个 section） */
+.cta::after {
+  content: "";
+  position: absolute;
+  bottom: -60px;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background: #ffffff;
+  border-radius: 50% 50% 0 0;
+  z-index: 0;
+}
+
+/* ==================================================
+  CTA 内容层级
+================================================== */
+.cta .inner {
+  position: relative;
+  z-index: 1;
+}
+
+/* ==================================================
+  CTA 标题
+================================================== */
+.cta__title {
+  margin: 0;
+  line-height: 1.25;
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+/* 上行标题 */
+.cta__title-top {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #333;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+}
+
+@media (min-width: 768px) {
+  .cta__title-top {
+    font-size: 2.6rem;
+  }
+}
+
+/* 主标题 */
+.cta__title-main {
+  position: relative;
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: #e40a1f;
+}
+
+/* 荧光强调条（CTA 记忆点） */
+.cta__title-main::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  transform: translateX(-50%);
+  width: 120%;
+  height: 12px;
+  background: #fff4a3;
+  z-index: -1;
+}
+
+@media (min-width: 768px) {
+  .cta__title-main {
+    font-size: 3.2rem;
+  }
+}
+
+/* ==================================================
+  CTA 说明文
+================================================== */
+.cta__lead {
+  margin-top: 32px;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #1f4d9c;
+}
+
+.cta__lead span {
+  color: #e40a1f;
+  font-weight: 900;
+}
+
+@media (min-width: 768px) {
+  .cta__lead {
+    font-size: 1.6rem;
+  }
+}
+
+/* ==================================================
+  CTA 按钮区
+================================================== */
+.cta__buttons {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+@media (min-width: 768px) {
+  .cta__buttons {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+/* ==================================================
+  CTA 主按钮强调
+================================================== */
+.btn--primary {
+  box-shadow: 0 10px 24px rgba(0, 121, 56, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@media (hover: hover) {
+  .btn--primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 32px rgba(0, 121, 56, 0.35);
+  }
+}
+
+/* ==================================================
+  CTA SP（手机）微调
+================================================== */
+@media (max-width: 767px) {
+  .cta::before {
+    width: 140px;
+    height: 140px;
+    top: -60px;
+    right: -60px;
+  }
+
+  .cta::after {
+    height: 80px;
+    bottom: -40px;
+  }
+}
+
+/* ==================================================
+  Flow / 特典
+================================================== */
+/* ==================================================
+  Flow – 真题更换用 Background（Final）
+================================================== */
+.flow {
+  position: relative;
+  background: linear-gradient(180deg,
+      #ffffff 0%,
+      #f6f9ff 100%);
+  overflow: hidden;
+}
+
+/* 右上装饰（主视觉引导） */
+.flow::before {
+  content: "";
+  position: absolute;
+  top: -140px;
+  right: -180px;
+  width: 420px;
+  height: 420px;
+  background: #eef3ff;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+/* 左下装饰（平衡整体） */
+.flow::after {
+  content: "";
+  position: absolute;
+  bottom: -160px;
+  left: -200px;
+  width: 460px;
+  height: 460px;
+  background: #f0f6ff;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+/* 内容层级保障 */
+.flow .inner {
+  position: relative;
+  z-index: 1;
+}
+
+/* ==================================================
+  Flow 标题（真题更换强调）
+================================================== */
+.flow .section-title {
+  margin-bottom: 48px;
+  font-weight: 900;
+}
+
+/* ==================================================
+  Benefits（特典列表｜居中强化版）
+================================================== */
+
+.benefits {
+  max-width: 860px;
+  margin: 0 auto 72px;
+  padding: 0;
+
+  display: grid;
+  gap: 26px;
+}
+
+/* 单条特典 */
+.benefits li {
+  position: relative;
+
+  background: #ffffff;
+  color: #1f4d9c;
+
+  /* 字体更大、更显眼 */
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-weight: 900;
+  line-height: 1.35;
+
+  /* ⬇️ 左右对称，保证“视觉正中” */
+  padding: 30px 32px;
+  text-align: center;
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.2);
+
+  overflow: hidden;
+}
+
+/* 左侧蓝色大强调块（更宽） */
+.benefits li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 64px;
+  /* ⬅️ 蓝色明显加宽 */
+  height: 100%;
+
+  background: linear-gradient(180deg,
+      #1f4d9c 0%,
+      #163d7a 100%);
+}
+
+/* 特典①②③ 徽章 */
+.benefits li strong {
+  position: absolute;
+  top: 50%;
+  left: 18px;
+  transform: translateY(-50%);
+
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #ffffff;
+
+  background: #1f4d9c;
+  padding: 10px 16px;
+  border-radius: 999px;
+
+  box-shadow:
+    0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* ==================================================
+  PC Hover（高级感）
+================================================== */
+@media (hover: hover) {
+  .benefits li {
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  .benefits li:hover {
+    transform: translateY(-6px);
+    box-shadow:
+      0 24px 56px rgba(0, 0, 0, 0.32);
+  }
+}
+
+/* ==================================================
+  SP（手机）适配
+================================================== */
+@media (max-width: 767px) {
+  .benefits {
+    gap: 18px;
+    margin-bottom: 44px;
+  }
+
+  .benefits li {
+    font-size: 1.3rem;
+    padding: 26px 20px;
+  }
+
+  .benefits li::before {
+    width: 52px;
+  }
+
+  .benefits li strong {
+    left: 12px;
+    font-size: 1rem;
+    padding: 8px 12px;
+  }
+}
+
+
+/* ==================================================
+  Hover（PC 轻微上浮）
+================================================== */
+@media (hover: hover) {
+  .benefits li {
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  .benefits li:hover {
+    transform: translateY(-4px);
+    box-shadow:
+      0 20px 48px rgba(0, 0, 0, 0.28);
+  }
+}
+
+/* ==================================================
+  SP（手机）适配
+================================================== */
+@media (max-width: 767px) {
+  .benefits {
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .benefits li {
+    font-size: 1.2rem;
+    padding: 22px 20px 22px 76px;
+  }
+
+  .benefits li strong {
+    left: 18px;
+    font-size: 1rem;
+    padding: 6px 12px;
+  }
+}
+
+
+/* ==================================================
+  中间说明图（节奏控制）
+================================================== */
+.flow-text {
+  max-width: 360px;
+  margin: 56px auto;
+}
+
+@media (min-width: 768px) {
+  .flow-text {
+    max-width: 480px;
+    margin: 64px auto;
+  }
+}
+
+/* ==================================================
+  真题更换卡片区域
+================================================== */
+.flow-cards {
+  display: grid;
+  gap: 28px;
+}
+
+@media (min-width: 768px) {
+  .flow-cards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 36px;
+  }
+}
+
+/* ==================================================
+  卡片样式（说明型・稳重）
+================================================== */
+.card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 36px 24px 32px;
+  text-align: center;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.15);
+}
+
+.card__label {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1f4d9c;
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 800;
+  padding: 6px 16px;
+  border-radius: 999px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  max-width: 140px;
+  margin: 28px auto 18px;
+}
+
+.card p {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.card p strong {
+  color: #e40a1f;
+  font-size: 1.4rem;
+}
+
+.card small {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* ==================================================
+  Flow（纯绿色 × 设计感 × 白字）
+================================================== */
+
+.flow {
+  position: relative;
+  background: linear-gradient(180deg,
+      #3f8f42 0%,
+      #2f7a36 100%);
+  overflow: hidden;
+}
+
+/* 装饰圆形（设计感来源） */
+.flow::before {
+  content: "";
+  position: absolute;
+  top: -160px;
+  right: -180px;
+  width: 420px;
+  height: 420px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.flow::after {
+  content: "";
+  position: absolute;
+  bottom: -180px;
+  left: -200px;
+  width: 460px;
+  height: 460px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+/* 内容层级保证 */
+.flow .inner {
+  position: relative;
+  z-index: 1;
+}
+
+/* ==================================================
+  Flow 标题（超强调版）
+================================================== */
+
+.flow .section-title {
+  position: relative;
+  text-align: center;
+
+  /* 👇 核心：大字号 + 自适应 */
+  font-size: clamp(2.6rem, 5vw, 3.6rem);
+  font-weight: 900;
+  line-height: 1.25;
+
+  color: #ffffff;
+  margin-bottom: 64px;
+
+  letter-spacing: 0.04em;
+}
+
+/* 黄色强调线（更宽、更稳） */
+.flow .section-title::after {
+  content: "";
+  display: block;
+
+  width: min(460px, 85%);
+  height: 8px;
+
+  margin: 18px auto 0;
+
+  background: linear-gradient(90deg,
+      #fff7a0 0%,
+      #ffeb3b 50%,
+      #fff7a0 100%);
+
+  border-radius: 999px;
+}
+
+/* ==================================================
+  SP（手机端）也要显眼
+================================================== */
+
+@media (max-width: 767px) {
+  .flow .section-title {
+    font-size: clamp(1.9rem, 7vw, 2.4rem);
+    line-height: 1.35;
+    margin-bottom: 44px;
+  }
+
+  .flow .section-title::after {
+    width: 220px;
+    height: 6px;
+    margin-top: 14px;
+  }
+}
+
+
+/* ==================================================
+  SP（手机端）微调
+================================================== */
+
+@media (max-width: 767px) {
+  .flow .section-title {
+    font-size: 1.8rem;
+    line-height: 1.4;
+    margin-bottom: 40px;
+  }
+
+  .flow .section-title::after {
+    width: 200px;
+    height: 5px;
+    margin-top: 12px;
+  }
+
+  .flow::before {
+    width: 260px;
+    height: 260px;
+    top: -120px;
+    right: -140px;
+  }
+
+  .flow::after {
+    width: 300px;
+    height: 300px;
+    bottom: -140px;
+    left: -160px;
+  }
+
+  .benefits {
+    margin-bottom: 40px;
+  }
+
+  .flow-text {
+    margin: 40px auto;
+  }
+}
+
+/* ==================================================
+  Campaign
+================================================== */
+.campaign {
+  background: #fffdf0;
+  text-align: center;
+}
+
+/* ==================================================
+  Schedule
+================================================== */
+.schedule {
+  background: #ebf1fe;
+  text-align: center;
+}
+
+/* ================================
+  Feature 
+================================ */
+.feature {
+  background: linear-gradient(180deg, #469f48 0%, #3f8f42 100%);
+  color: #ffffff;
+}
+
+/* 标题下说明 */
+.feature__lead {
+  text-align: center;
+  font-weight: 700;
+  color: #fffd80;
+  margin-bottom: 48px;
+}
+
+/* ================================
+ 
+================================ */
+.feature-list {
+  display: grid;
+  gap: 24px;
+  counter-reset: feature;
+}
+
+@media (min-width: 768px) {
+  .feature-list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+}
+
+/* ================================
+ 
+================================ */
+.feature-list article {
+  position: relative;
+  background: #ffffff;
+  color: #333;
+  border-radius: 24px;
+  overflow: visible;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@media (hover: hover) {
+  .feature-list article:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+  }
+}
+
+/* ================================
+ 
+================================ */
+.feature-list article::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 96px;
+  background: #1f4d9c;
+  border-radius: 24px 24px 0 0;
+  z-index: 0;
+}
+
+/* ================================
+
+================================ */
+.feature-list article::before {
+  counter-increment: feature;
+  content: counter(feature, decimal-leading-zero);
+
+  position: absolute;
+  top: -18px;
+  left: -18px;
+
+  width: 56px;
+  height: 56px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+  color: #1f4d9c;
+  border-radius: 50%;
+
+  font-size: 2rem;
+  font-weight: 900;
+
+  box-shadow:
+    0 10px 28px rgba(0, 0, 0, 0.28),
+    0 3px 8px rgba(0, 0, 0, 0.15);
+
+  z-index: 3;
+}
+
+@media (max-width: 767px) {
+  .feature-list article::before {
+    width: 44px;
+    height: 44px;
+    font-size: 1.15rem;
+    top: -14px;
+    left: -14px;
+  }
+}
+
+/* ================================
+  图片
+================================ */
+.feature-list article img {
+  position: relative;
+  z-index: 1;
+  margin-top: 96px;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  display: block;
+}
+
+/* ================================
+  蓝色区里的标题
+================================ */
+.feature-list article h3 {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-align: center;
+
+  z-index: 2;
+  white-space: nowrap;
+}
+
+/* ================================
+  底部白色说明区
+================================ */
+.feature-list article p {
+  margin: 20px 18px 28px;
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* ==================================================
+  Hero2
+================================================== */
+.hero2--grid {
+  display: grid;
+  grid-template-columns: 500px auto;
+  align-items: center;
+  justify-content: center;
+  column-gap: 24px;
+}
+
+/* 图片容器 */
+.hero2__img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 文字 */
+.hero2__section-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+/* ==================================================
+  Hero2
+================================================== */
+@media (max-width: 767px) {
+  .hero2--grid {
+    grid-template-columns: 1fr;
+
+    row-gap: 16px;
+    justify-items: center;
+
+    text-align: center;
+  }
+
+  .hero2__img {
+    width: 100%;
+  }
+
+  .hero2__img img {
+    max-width: 100%;
+  }
+
+  .hero2__section-title {
+    font-size: 2rem;
+
+    white-space: normal;
+
+  }
+}
+
+/* ==================================================
+  Large PC
+================================================== */
+@media (min-width: 1440px) {
+  .inner {
+    max-width: 1280px;
+
+  }
+}
